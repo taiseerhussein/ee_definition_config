@@ -2,6 +2,12 @@
 - name: Playbook to create custom EE
   hosts: all
   gather_facts: false
+  collections:
+    - name: infra.ee_utilities
+    - name: awx.awx
+    - name: infra.controller_configuration
+    - name: infra.ah_configuration
+    - name: containers.podman
   vars:
     # For controller configuration definition
     ee_reg_credential: Automation Hub Container Registry
